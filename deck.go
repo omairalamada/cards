@@ -9,8 +9,7 @@ import (
 
 // create a new type of 'deck'
 // which is a slice of strings
-
-type deck []string
+type deck []string // slice of string
 
 func newDeck() deck {
 	cards := deck{}
@@ -56,4 +55,7 @@ func newDeckFromFile(filename string) deck {
 		fmt.Println("Error: ", err)
 		os.Exit(1)
 	}
+
+	s := strings.Split(string(bs), ",") // Ace of spades, Thwo of Spades, Three of Spades
+	return deck(s)
 }
